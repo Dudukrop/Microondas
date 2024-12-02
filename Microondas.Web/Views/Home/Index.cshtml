@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Microondas Digital";
+}
+
+<div class="container">
+    <main role="main" class="pb-3">
+        <div class="container">
+            <h1>@ViewData["Title"]</h1>
+
+            <div id="status-container" class="mb-3">
+                <h2>Status do Microondas</h2>
+                <p id="estado">Estado: <span>Desconhecido</span></p>
+                <p id="tempo">Tempo Restante: <span>0</span> segundos</p>
+                <p id="progresso">Progresso: <span id="progresso-str"></span></p>
+            </div>
+
+            <div class="form-container mb-3">
+                <div class="form-card mb-3">
+                    <h3>Iniciar Aquecimento</h3>
+                    <input type="number" id="tempo-aquecimento" min="1" max="120" placeholder="Tempo (segundos)" class="form-control mb-2" />
+                    <input type="number" id="potencia-aquecimento" min="1" max="10" placeholder="Potência (1-10)" class="form-control mb-2" />
+                    <div class="keyboard mb-2">
+                        <button class="key btn btn-light" onclick="addDigit('1')">1</button>
+                        <button class="key btn btn-light" onclick="addDigit('2')">2</button>
+                        <button class="key btn btn-light" onclick="addDigit('3')">3</button>
+                        <button class="key btn btn-light" onclick="addDigit('4')">4</button>
+                        <button class="key btn btn-light" onclick="addDigit('5')">5</button>
+                        <button class="key btn btn-light" onclick="addDigit('6')">6</button>
+                        <button class="key btn btn-light" onclick="addDigit('7')">7</button>
+                        <button class="key btn btn-light" onclick="addDigit('8')">8</button>
+                        <button class="key btn btn-light" onclick="addDigit('9')">9</button>
+                        <button class="key btn btn-light" onclick="addDigit('0')">0</button>
+                        <button class="key btn btn-danger" onclick="clearInput()">C</button>
+                    </div>
+                    <button class="btn btn-primary" onclick="iniciarAquecimento()">Iniciar</button>
+                </div>
+
+                <div class="form-card mb-3">
+                    <h3>Pausar ou Cancelar</h3>
+                    <button class="btn btn-warning" onclick="pausarOuCancelar()">Pausar ou Cancelar</button>
+                </div>
+
+                @* <div class="form-card mb-3">
+                    <h3>Acrescentar Tempo</h3>
+                    <input type="number" id="tempo-extra" placeholder="Tempo adicional (segundos)" class="form-control mb-2" />
+                    <button class="btn btn-success" onclick="acrescentarTempo()">Acrescentar</button>
+                </div> *@
+
+                <div class="form-card mb-3">
+                    <h3>Programas de Aquecimento</h3>
+                    <select id="programa-selecionado" class="form-select mb-2">
+                        <option value="" disabled selected>Selecione um programa</option>
+                        @foreach (var programa in ViewBag.ProgramasPreDefinidos)
+                        {
+                            <option value="@programa.Nome">@programa.Nome</option>
+                        }
+                        @foreach (var programa in ViewBag.ProgramasCustomizados)
+                        {
+                            <option value="@programa.Nome"><i>@programa.Nome</i></option>
+                        }
+                    </select>
+                    <button class="btn btn-info" onclick="iniciarPrograma()">Iniciar Programa</button>
+                </div>
+
+                <div class="form-card mb-3">
+                    <h3>Cadastrar Programa Customizado</h3>
+                    <input type="text" id="nome-programa" placeholder="Nome do Programa" class="form-control mb-2" />
+                    <input type="text" id="alimento-programa" placeholder="Alimento" class="form-control mb-2" />
+                    <input type="number" id="tempo-programa" min="1" max="120" placeholder="Tempo (segundos)" class="form-control mb-2" />
+                    <input type="number" id="potencia-programa" min="1" max="10" placeholder="Potência (1-10)" class="form-control mb-2" />
+                    <input type="text" id="string-aquecimento-programa" placeholder="Caractere de Aquecimento" class="form-control mb-2" />
+                    <input type="text" id="instrucoes-programa" placeholder="Instruções (Opcional)" class="form-control mb-2" />
+                    <button class="btn btn-success" onclick="cadastrarPrograma()">Cadastrar Programa</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+@section Scripts {
+    <script src="~/scripts.js" asp-append-version="true"></script>
+}
