@@ -6,5 +6,13 @@
     "Potencia": 5,
     "StringAquecimento": "z",
     "Instrucoes": ""
+  },
+  {
+    "Nome": "Teste2",
+    "Alimento": "Pao",
+    "Tempo": 14,
+    "Potencia": 5,
+    "StringAquecimento": "v",
+    "Instrucoes": ""
   }
 ]

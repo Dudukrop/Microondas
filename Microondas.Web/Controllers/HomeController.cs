@@ -34,10 +34,12 @@ namespace ProjetoMicroondas.Web.Controllers
         [Route("status")]
         public IActionResult ObterStatus()
         {
+            var microondas = _microondasService.ObterMicroondas(); // Certifique-se de obter o objeto microondas
             var status = new
             {
                 TempoRestante = _microondasService.ObterTempoRestante(),
-                Estado = _microondasService.ObterEstado()
+                Estado = microondas.Estado,
+                Potencia = microondas.Potencia
             };
 
             return Json(status);
@@ -50,10 +52,12 @@ namespace ProjetoMicroondas.Web.Controllers
             try
             {
                 _microondasService.IniciarAquecimento(request.Tempo, request.Potencia);
+                var microondas = _microondasService.ObterMicroondas(); // Certifique-se de obter o objeto microondas
                 var status = new
                 {
-                    Estado = _microondasService.ObterEstado(),
-                    TempoRestante = _microondasService.ObterTempoRestante()
+                    Estado = microondas.Estado,
+                    TempoRestante = _microondasService.ObterTempoRestante(),
+                    Potencia = microondas.Potencia
                 };
                 return Json(new { success = true, message = "Aquecimento iniciado com sucesso!", status });
             }

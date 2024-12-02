@@ -1,4 +1,6 @@
-﻿namespace ProjetoMicroondas.Dominio.Interfaces
+﻿using ProjetoMicroondas.Dominio.Entidades;
+
+namespace ProjetoMicroondas.Dominio.Interfaces
 {
 	public interface IMicroondasService
 	{
@@ -11,5 +13,6 @@
 		int ObterTempoRestante();
 		string ObterEstado();
 		void IniciarProgramaAquecimento(string nomePrograma);
+		Microondas ObterMicroondas();
     }
 }

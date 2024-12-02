@@ -28,3 +28,4 @@ C:\Programação\Microondas\ProjetoMicroondas.Infraestrutura\obj\Debug\net8.0\Pr
 C:\Programação\Microondas\ProjetoMicroondas.Infraestrutura\obj\Debug\net8.0\refint\ProjetoMicroondas.Infraestrutura.dll
 C:\Programação\Microondas\ProjetoMicroondas.Infraestrutura\obj\Debug\net8.0\ProjetoMicroondas.Infraestrutura.pdb
 C:\Programação\Microondas\ProjetoMicroondas.Infraestrutura\obj\Debug\net8.0\ref\ProjetoMicroondas.Infraestrutura.dll
+C:\Programação\Microondas\ProjetoMicroondas.Infraestrutura\obj\Debug\net8.0\ProjetoMicroondas.Infraestrutura.sourcelink.json

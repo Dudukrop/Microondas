@@ -11,6 +11,7 @@
                 <h2>Status do Microondas</h2>
                 <p id="estado">Estado: <span>Desconhecido</span></p>
                 <p id="tempo">Tempo Restante: <span>0</span> segundos</p>
+                <p id="potencia">Potência: <span>Desconhecido</span></p>
                 <p id="progresso">Progresso: <span id="progresso-str"></span></p>
             </div>
 
@@ -18,7 +19,7 @@
                 <div class="form-card mb-3">
                     <h3>Iniciar Aquecimento</h3>
                     <input type="number" id="tempo-aquecimento" min="1" max="120" placeholder="Tempo (segundos)" class="form-control mb-2" />
-                    <input type="number" id="potencia-aquecimento" min="1" max="10" placeholder="Potência (1-10)" class="form-control mb-2" />
+                    <input type="number" id="potencia-aquecimento" min="1" max="10" placeholder="Potência (1-10)" class="form-control mb-2" oninput="exibirPotenciaSelecionada()" />
                     <div class="keyboard mb-2">
                         <button class="key btn btn-light" onclick="addDigit('1')">1</button>
                         <button class="key btn btn-light" onclick="addDigit('2')">2</button>

@@ -31,6 +31,7 @@ function iniciarCronometro(tempo, potencia) {
         remainingTime = Math.max(Math.floor((endTime - currentTime) / 1000), 0);
 
         document.getElementById('tempo').textContent = `Tempo Restante: ${formatarTempo(remainingTime)}`;
+        document.getElementById('potencia').textContent = `Potência: ${potencia}`;
 
         // Atualiza a string de progresso
         progressoStr += '.'.repeat(potencia) + ' ';
@@ -42,6 +43,12 @@ function iniciarCronometro(tempo, potencia) {
             document.getElementById('progresso-str').textContent += " Aquecimento concluído.";
         }
     }, 1000);
+}
+
+// Função para exibir a potência selecionada no front-end (sem atualizar o menu)
+function exibirPotenciaSelecionada() {
+    const potencia = document.getElementById('potencia-aquecimento').value || 10;
+    document.getElementById('potencia-selecionada').textContent = `Potência Selecionada: ${potencia}`;
 }
 
 // Função para iniciar o aquecimento
@@ -64,10 +71,11 @@ async function iniciarAquecimento() {
         const status = data.status;
         document.getElementById('estado').textContent = `Estado: ${status.estado}`;
         document.getElementById('tempo').textContent = `Tempo Restante: ${formatarTempo(status.tempoRestante)}`;
+        document.getElementById('potencia').textContent = `Potência: ${status.potencia}`;
         document.getElementById('progresso-str').textContent = ''; // Limpa a string de progresso
 
         // Limpa os campos de entrada
-        clearInput();
+        document.getElementById('tempo-aquecimento').value = '';
         document.getElementById('potencia-aquecimento').value = '';
 
         // Reinicia o cronômetro com o tempo restante e a potência
@@ -92,6 +100,7 @@ async function pausarOuCancelar() {
         const status = data.status;
         document.getElementById('estado').textContent = `Estado: ${status.estado}`;
         document.getElementById('tempo').textContent = `Tempo Restante: ${formatarTempo(status.tempoRestante)}`;
+        document.getElementById('potencia').textContent = `Potência: ${status.potencia || 10}`;
 
         if (status.estado === "Em funcionamento") {
             iniciarCronometro(status.tempoRestante, status.potencia); // Reinicia o cronômetro
@@ -100,6 +109,7 @@ async function pausarOuCancelar() {
             document.getElementById('tempo').textContent = "Tempo Restante: 0 segundos";
             document.getElementById('estado').textContent = "Estado: Cancelado";
             document.getElementById('progresso-str').textContent = "";
+            document.getElementById('potencia').textContent = "Potência: Desconhecido";
         }
     } catch (error) {
         console.error('Erro ao pausar/cancelar:', error);
@@ -125,6 +135,7 @@ async function acrescentarTempo() {
         const status = data.status;
         document.getElementById('estado').textContent = `Estado: ${status.estado}`;
         document.getElementById('tempo').textContent = `Tempo Restante: ${formatarTempo(status.tempoRestante)}`;
+        document.getElementById('potencia').textContent = `Potência: ${status.potencia}`;
 
         if (status.estado === "Em funcionamento") {
             iniciarCronometro(status.tempoRestante, status.potencia); // Reinicia o cronômetro
@@ -153,6 +164,7 @@ async function iniciarPrograma() {
         const status = data.status;
         document.getElementById('estado').textContent = `Estado: ${status.estado}`;
         document.getElementById('tempo').textContent = `Tempo Restante: ${formatarTempo(status.tempoRestante)}`;
+        document.getElementById('potencia').textContent = `Potência: ${status.potencia}`;
         document.getElementById('progresso-str').textContent = ''; // Limpa a string de progresso
 
         // Reinicia o cronômetro com o tempo restante e a potência
@@ -219,6 +231,9 @@ window.onload = () => {
         .then(data => {
             document.getElementById('estado').textContent = `Estado: ${data.estado}`;
             document.getElementById('tempo').textContent = `Tempo Restante: ${formatarTempo(data.tempoRestante)}`;
+            document.getElementById('potencia').textContent = `Potência: ${data.potencia || 10}`;
+            document.getElementById('progresso-str').textContent = ''; // Limpa a string de progresso
+
             if (data.estado === "Em funcionamento") {
                 iniciarCronometro(data.tempoRestante, data.potencia);
             }

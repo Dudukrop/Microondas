@@ -32,3 +32,4 @@ C:\Programação\Microondas\Microondas.Aplicacao\obj\Debug\net8.0\ProjetoMicroon
 C:\Programação\Microondas\Microondas.Aplicacao\obj\Debug\net8.0\refint\ProjetoMicroondas.Aplicacao.dll
 C:\Programação\Microondas\Microondas.Aplicacao\obj\Debug\net8.0\ProjetoMicroondas.Aplicacao.pdb
 C:\Programação\Microondas\Microondas.Aplicacao\obj\Debug\net8.0\ref\ProjetoMicroondas.Aplicacao.dll
+C:\Programação\Microondas\Microondas.Aplicacao\obj\Debug\net8.0\ProjetoMicroondas.Aplicacao.sourcelink.json

@@ -1,5 +1,6 @@
 ﻿using ProjetoMicroondas.Aplicacao.DTOs;
 using ProjetoMicroondas.Aplicacao.Interfaces;
+using ProjetoMicroondas.Dominio.Entidades;
 using ProjetoMicroondas.Dominio.Interfaces;
 using System;
 
@@ -126,6 +127,11 @@ namespace ProjetoMicroondas.Aplicacao.Services
         {
             var microondas = _microondasRepositorio.Obter(); 
             return microondas.Potencia;
+        }
+
+        public Microondas ObterMicroondas()
+        {
+            return _microondasRepositorio.Obter();
         }
     }
 }

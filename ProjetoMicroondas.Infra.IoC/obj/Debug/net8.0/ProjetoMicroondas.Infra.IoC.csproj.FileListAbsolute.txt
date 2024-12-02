@@ -36,3 +36,4 @@ C:\Programação\Microondas\ProjetoMicroondas.Infra.IoC\obj\Debug\net8.0\Projeto
 C:\Programação\Microondas\ProjetoMicroondas.Infra.IoC\obj\Debug\net8.0\refint\ProjetoMicroondas.Infra.IoC.dll
 C:\Programação\Microondas\ProjetoMicroondas.Infra.IoC\obj\Debug\net8.0\ProjetoMicroondas.Infra.IoC.pdb
 C:\Programação\Microondas\ProjetoMicroondas.Infra.IoC\obj\Debug\net8.0\ref\ProjetoMicroondas.Infra.IoC.dll
+C:\Programação\Microondas\ProjetoMicroondas.Infra.IoC\obj\Debug\net8.0\ProjetoMicroondas.Infra.IoC.sourcelink.json

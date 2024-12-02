@@ -20,3 +20,4 @@ C:\Programação\Microondas\Microondas.Dominio\obj\Debug\net8.0\ProjetoMicroonda
 C:\Programação\Microondas\Microondas.Dominio\obj\Debug\net8.0\refint\ProjetoMicroondas.Dominio.dll
 C:\Programação\Microondas\Microondas.Dominio\obj\Debug\net8.0\ProjetoMicroondas.Dominio.pdb
 C:\Programação\Microondas\Microondas.Dominio\obj\Debug\net8.0\ref\ProjetoMicroondas.Dominio.dll
+C:\Programação\Microondas\Microondas.Dominio\obj\Debug\net8.0\ProjetoMicroondas.Dominio.sourcelink.json
